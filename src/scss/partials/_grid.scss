@@ -1,0 +1,63 @@
+// --------------------------------------------------------- container
+
+.container {
+  @include auto-center;
+  max-width: $container-width;
+  margin: 0 $container-padding;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.container.discharge {
+  margin: 0 unset;
+}
+
+// --------------------------------------------------------- row
+
+.row {
+  flex: auto;
+  display: flex;
+  margin-left: -$container-padding / 2;
+  margin-right: -$container-padding / 2;
+}
+
+.row.discharge {
+  margin-left: unset;
+  margin-right: unset;
+}
+
+.row.max {
+  flex-wrap: wrap;
+  @include create-max($no-of-columns);
+}
+
+// --------------------------------------------------------- column
+
+.column {
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding-right: $container-padding / 2;
+  padding-left: $container-padding / 2;
+}
+
+.column.discharge {
+  padding-right: unset;
+  padding-left: unset;
+}
+
+// --------------------------------------------------------- column
+
+@include create-restrictors($no-of-restrictors);
+@include create-positions($no-of-columns);
+
+// --------------------------------------------------------- break col width at breakpoints
+
+@each $breakpoint-name, $breakpoint-value in $breakpoints {
+  @media only screen and (max-width: $breakpoint-value) {
+    .short-#{$breakpoint-name} {
+      flex-basis: 100%;
+    }
+  }
+}

@@ -1,0 +1,191 @@
+@mixin create-max($no-of-columns) {
+  @for $i from 2 through $no-of-columns {
+    &.#{$i} {
+      flex-basis: 100% / $i;
+    }
+  }
+}
+
+@mixin create-columns($no-of-columns) {
+  @for $i from 1 through $no-of-columns {
+    @if $i / $no-of-columns * 100 == 25 {
+      .col-#{$i},
+      .col-fourth {
+        flex-basis: $i / $no-of-columns * 100%;
+      }
+    } @else if $i / $no-of-columns * 100 == 20 {
+      .col-#{$i},
+      .col-fifth {
+        flex-basis: $i / $no-of-columns * 100%;
+      }
+    } @else if $i / $no-of-columns * 100 == 33.333333 {
+      .col-#{$i},
+      .col-third {
+        flex-basis: $i / $no-of-columns * 100%;
+      }
+    } @else if $i / $no-of-columns * 100 == 40 {
+      .col-#{$i},
+      .col-two-fifths {
+        flex-basis: $i / $no-of-columns * 100%;
+      }
+    } @else if $i / $no-of-columns * 100 == 50 {
+      .col-#{$i},
+      .col-half {
+        flex-basis: $i / $no-of-columns * 100%;
+      }
+    } @else if $i / $no-of-columns * 100 == 60 {
+      .col-#{$i},
+      .col-three-fifths {
+        flex-basis: $i / $no-of-columns * 100%;
+      }
+    } @else if $i / $no-of-columns * 100 == 66.66667 {
+      .col-#{$i},
+      .col-two-thirds {
+        flex-basis: $i / $no-of-columns * 100%;
+      }
+    } @else if $i / $no-of-columns * 100 == 75 {
+      .col-#{$i},
+      .col-three-fourths {
+        flex-basis: $i / $no-of-columns * 100%;
+      }
+    } @else if $i / $no-of-columns * 100 == 80 {
+      .col-#{$i},
+      .col-four-fifths {
+        flex-basis: $i / $no-of-columns * 100%;
+      }
+    } @else if $i / $no-of-columns * 100 == 100 {
+      .col-#{$i},
+      .col-full {
+        flex-basis: $i / $no-of-columns * 100%;
+      }
+    } @else {
+      .col-#{$i} {
+        flex-basis: $i / $no-of-columns * 100%;
+      }
+    }
+  }
+}
+
+@mixin create-restrictors($no-of-restrictors) {
+  @for $i from 1 through $no-of-restrictors {
+    @if $i / $no-of-restrictors * 100 == 25 {
+      .restrictor-#{$i},
+      .restrictor-fourth {
+        max-width: $i / $no-of-restrictors * 100%;
+      }
+    } @else if $i / $no-of-restrictors * 100 == 20 {
+      .restrictor-#{$i},
+      .restrictor-fifth {
+        max-width: $i / $no-of-restrictors * 100%;
+      }
+    } @else if $i / $no-of-restrictors * 100 == 33.333333 {
+      .restrictor-#{$i},
+      .restrictor-third {
+        max-width: $i / $no-of-restrictors * 100%;
+      }
+    } @else if $i / $no-of-restrictors * 100 == 40 {
+      .restrictor-#{$i},
+      .restrictor-two-fifths {
+        max-width: $i / $no-of-restrictors * 100%;
+      }
+    } @else if $i / $no-of-restrictors * 100 == 50 {
+      .restrictor-#{$i},
+      .restrictor-half {
+        max-width: $i / $no-of-restrictors * 100%;
+      }
+    } @else if $i / $no-of-restrictors * 100 == 60 {
+      .restrictor-#{$i},
+      .restrictor-three-fifths {
+        max-width: $i / $no-of-restrictors * 100%;
+      }
+    } @else if $i / $no-of-restrictors * 100 == 66.66667 {
+      .restrictor-#{$i},
+      .restrictor-two-thirds {
+        max-width: $i / $no-of-restrictors * 100%;
+      }
+    } @else if $i / $no-of-restrictors * 100 == 75 {
+      .restrictor-#{$i},
+      .restrictor-three-fourths {
+        max-width: $i / $no-of-restrictors * 100%;
+      }
+    } @else if $i / $no-of-restrictors * 100 == 80 {
+      .restrictor-#{$i},
+      .restrictor-four-fifths {
+        max-width: $i / $no-of-restrictors * 100%;
+      }
+    } @else if $i / $no-of-restrictors * 100 == 100 {
+      .restrictor-#{$i},
+      .restrictor-full {
+        max-width: $i / $no-of-restrictors * 100%;
+      }
+    } @else {
+      .restrictor-#{$i} {
+        max-width: $i / $no-of-restrictors * 100%;
+      }
+    }
+  }
+}
+
+@mixin create-positions() {
+  @for $i from 1 through ($no-of-columns - 1) {
+    @if $i / $no-of-columns * 100 == 25 {
+      .position-#{$i},
+      .position-fourth {
+        margin-left: $i / $no-of-columns * 100%;
+      }
+    } @else if $i / $no-of-columns * 100 == 20 {
+      .position-#{$i},
+      .position-fifth {
+        margin-left: $i / $no-of-columns * 100%;
+      }
+    } @else if $i / $no-of-columns * 100 == 33.333333 {
+      .position-#{$i},
+      .position-third {
+        margin-left: $i / $no-of-columns * 100%;
+      }
+    } @else if $i / $no-of-columns * 100 == 40 {
+      .position-#{$i},
+      .position-two-fifths {
+        margin-left: $i / $no-of-columns * 100%;
+      }
+    } @else if $i / $no-of-columns * 100 == 50 {
+      .position-#{$i},
+      .position-half {
+        margin-left: $i / $no-of-columns * 100%;
+      }
+    } @else if $i / $no-of-columns * 100 == 60 {
+      .position-#{$i},
+      .position-three-fifths {
+        margin-left: $i / $no-of-columns * 100%;
+      }
+    } @else if $i / $no-of-columns * 100 == 66.66667 {
+      .position-#{$i},
+      .position-two-thirds {
+        margin-left: $i / $no-of-columns * 100%;
+      }
+    } @else if $i / $no-of-columns * 100 == 75 {
+      .position-#{$i},
+      .position-three-fourths {
+        margin-left: $i / $no-of-columns * 100%;
+      }
+    } @else if $i / $no-of-columns * 100 == 80 {
+      .position-#{$i},
+      .position-four-fifths {
+        margin-left: $i / $no-of-columns * 100%;
+      }
+    } @else {
+      .position-#{$i} {
+        margin-left: $i / $no-of-columns * 100%;
+      }
+    }
+  }
+}
+
+@mixin create-media-query($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}

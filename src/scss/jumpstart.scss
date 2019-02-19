@@ -1,0 +1,213 @@
+@import "node_modules/normalize.scss/normalize.scss", "config/config",
+  "mixins/mixins", "mixins/creators";
+
+// --------------------------------------------------------- root
+
+* {
+  margin: $margin-base;
+  box-sizing: inherit;
+  padding: $container-padding;
+}
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: $font-color-base;
+  font-family: $font-family-base;
+  font-size: 1rem;
+  line-height: $line-height-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $font-color-header;
+  font-family: $font-family-header;
+}
+
+h1 {
+  font-size: 1rem * $scale-factor * $scale-factor * $scale-factor;
+  line-height: $line-height-base * 3;
+  margin-top: $line-height-base;
+  margin-bottom: $line-height-base * 2;
+}
+
+h2 {
+  font-size: 1rem * $scale-factor * $scale-factor;
+  line-height: $line-height-base * 2;
+  margin-top: $line-height-base;
+  margin-bottom: $line-height-base;
+}
+
+h3 {
+  font-size: 1rem * $scale-factor;
+  line-height: $line-height-base * 2;
+  margin-top: $line-height-base;
+  margin-bottom: 0rem;
+}
+
+h4 {
+  font-size: 1rem * ($scale-factor / 2);
+  line-height: $line-height-base;
+  margin-top: $line-height-base;
+  margin-bottom: 0rem;
+}
+
+h5 {
+  font-size: 1rem * ($scale-factor / 3);
+  line-height: $line-height-base;
+  margin-top: $line-height-base;
+  margin-bottom: 0rem;
+}
+
+h6 {
+  font-size: 1rem;
+  line-height: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+}
+
+p,
+ul,
+ol,
+pre,
+table,
+blockquote {
+  margin-top: 0rem;
+  margin-bottom: $line-height-base;
+}
+
+a {
+  background-color: transparent;
+  color: $link-color-base;
+  text-decoration: $link-decoration;
+}
+a:hover {
+  color: $link-color-hover;
+  text-decoration: $link-hover-decoration;
+}
+
+// --------------------------------------------------------- unordered list
+
+ul.no-style {
+  margin-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+ul.two {
+  columns: 2;
+}
+
+// --------------------------------------------------------- copy color
+
+@each $color-name, $color-code in $font-color-additional {
+  .font-#{$color-name} {
+    color: $color-code;
+  }
+}
+
+// --------------------------------------------------------- background color
+
+@each $background-name, $color-code in $background-colors {
+  template,
+  [fill-#{$background-name}] {
+    background-color: $color-code;
+  }
+}
+
+// --------------------------------------------------------- responsive elements
+
+@include create-media-query(phablet) {
+  ul.two {
+    columns: 1;
+  }
+
+  .margin-medium {
+    margin: $margin-base 0;
+  }
+
+  .margin-large {
+    margin: $margin-base 0;
+  }
+
+  .margin-xlarge {
+    margin: $margin-base * 1.3333 0;
+  }
+
+  .margin-xxlarge {
+    margin: $margin-base * 1.6667 0;
+  }
+
+  .margin-medim-top {
+    margin-top: $margin-base;
+  }
+
+  .margin-large-top {
+    margin-top: $margin-base;
+  }
+
+  .margin-xlarge-top {
+    margin-top: $margin-base * 1.3333;
+  }
+
+  .margin-xxlarge-top {
+    margin-top: $margin-base * 1.6667;
+  }
+
+  .margin-medium-bottom {
+    margin-bottom: $margin-base;
+  }
+
+  .margin-large-bottom {
+    margin-bottom: $margin-base;
+  }
+
+  .margin-xlarge-bottom {
+    margin-bottom: $margin-base * 1.3333;
+  }
+
+  .margin-xxlarge-bottom {
+    margin-bottom: $margin-base * 1.6667;
+  }
+}
+
+/* notes
+  
+    responsive letter spacing formula: calc((x)px - (0.0y)em)
+
+    container padding usually between 10 - 40px or 1.66667rem
+
+    recommended max-width for text - 560px 
+    
+    element structure => 
+    section.background-color
+    div.margin
+    div.container
+    div.row/.col-row
+    div.column/.restrictor
+    div (optional) .wrapper 
+    [content]
+    
+*/
