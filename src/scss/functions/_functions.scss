@@ -1,7 +1,0 @@
-@function calc-u($factor) {
-  @return $basic-unit * $factor;
-}
-
-@function calc-multiple-of($dividend) {
-  @return $basic-unit * round($dividend / $basic-unit);
-}
