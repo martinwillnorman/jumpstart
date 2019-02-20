@@ -126,8 +126,12 @@ $breakpoints: (
 
 @mixin create-max($no-of-columns) {
   @for $i from 2 through $no-of-columns {
-    &.m#{$i} {
+    &.max-#{$i} {
+      flex-wrap: wrap;
+    }
+    &.max-#{$i} > .column {
       flex-basis: 100% / $i;
+      max-width: 100% / $i;
     }
   }
 }
@@ -135,58 +139,69 @@ $breakpoints: (
 @mixin create-columns($no-of-columns) {
   @for $i from 1 through $no-of-columns {
     @if $i / $no-of-columns * 100 == 25 {
-      .col-#{$i},
-      .col-fourth {
+      .column-#{$i},
+      .column-fourth {
+        flex-grow: 0;
         flex-basis: $i / $no-of-columns * 100%;
       }
     } @else if $i / $no-of-columns * 100 == 20 {
-      .col-#{$i},
-      .col-fifth {
+      .column-#{$i},
+      .column-fifth {
+        flex-grow: 0;
         flex-basis: $i / $no-of-columns * 100%;
       }
-    } @else if $i / $no-of-columns * 100 == 33.333333 {
-      .col-#{$i},
-      .col-third {
+    } @else if floor($i / $no-of-columns * 100) == 33 {
+      .column-#{$i},
+      .column-third {
+        flex-grow: 0;
         flex-basis: $i / $no-of-columns * 100%;
       }
     } @else if $i / $no-of-columns * 100 == 40 {
-      .col-#{$i},
-      .col-two-fifths {
+      .column-#{$i},
+      .column-two-fifths {
+        flex-grow: 0;
         flex-basis: $i / $no-of-columns * 100%;
       }
     } @else if $i / $no-of-columns * 100 == 50 {
-      .col-#{$i},
-      .col-half {
+      .column-#{$i},
+      .column-half {
+        flex-grow: 0;
         flex-basis: $i / $no-of-columns * 100%;
       }
     } @else if $i / $no-of-columns * 100 == 60 {
-      .col-#{$i},
-      .col-three-fifths {
+      .column-#{$i},
+      .column-three-fifths {
+        flex-grow: 0;
         flex-basis: $i / $no-of-columns * 100%;
       }
-    } @else if $i / $no-of-columns * 100 == 66.66667 {
-      .col-#{$i},
-      .col-two-thirds {
+    } @else if floor($i / $no-of-columns * 100) == 66 {
+      .column-#{$i},
+      .column-two-thirds {
+        flex-grow: 0;
         flex-basis: $i / $no-of-columns * 100%;
       }
     } @else if $i / $no-of-columns * 100 == 75 {
-      .col-#{$i},
-      .col-three-fourths {
+      .column-#{$i},
+      .column-three-fourths {
+        flex-grow: 0;
         flex-basis: $i / $no-of-columns * 100%;
       }
     } @else if $i / $no-of-columns * 100 == 80 {
-      .col-#{$i},
-      .col-four-fifths {
+      .column-#{$i},
+      .column-four-fifths {
+        flex-grow: 0;
         flex-basis: $i / $no-of-columns * 100%;
       }
     } @else if $i / $no-of-columns * 100 == 100 {
-      .col-#{$i},
-      .col-full {
+      .column-#{$i},
+      .column-full {
+        flex-grow: 0;
         flex-basis: $i / $no-of-columns * 100%;
       }
     } @else {
-      .col-#{$i} {
+      .column-#{$i} {
         flex-basis: $i / $no-of-columns * 100%;
+        flex-grow: 0;
       }
     }
   }
@@ -204,7 +219,7 @@ $breakpoints: (
       .restrictor-fifth {
         max-width: $i / $no-of-restrictors * 100%;
       }
-    } @else if $i / $no-of-restrictors * 100 == 33.333333 {
+    } @else if floor($i / $no-of-restrictors * 100) == 33 {
       .restrictor-#{$i},
       .restrictor-third {
         max-width: $i / $no-of-restrictors * 100%;
@@ -224,7 +239,7 @@ $breakpoints: (
       .restrictor-three-fifths {
         max-width: $i / $no-of-restrictors * 100%;
       }
-    } @else if $i / $no-of-restrictors * 100 == 66.66667 {
+    } @else if floor($i / $no-of-restrictors * 100) == 66 {
       .restrictor-#{$i},
       .restrictor-two-thirds {
         max-width: $i / $no-of-restrictors * 100%;
@@ -663,6 +678,8 @@ ul.two {
   }
 }
 
+@include create-columns($no-of-columns);
+
 section {
   overflow: hidden;
 }
@@ -670,16 +687,22 @@ section {
 // --------------------------------------------------------- container
 
 .container {
-  @include auto-center;
   max-width: $container-width;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
 
 .container.unpack {
-  margin-left: 0;
-  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.container.no-max {
   max-width: unset;
 }
 
@@ -695,10 +718,6 @@ section {
   display: flex;
   margin-left: -$container-padding / 2;
   margin-right: -$container-padding / 2;
-}
-
-.row.max {
-  flex-wrap: wrap;
   @include create-max($no-of-columns);
 }
 
@@ -708,13 +727,13 @@ section {
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
-  padding-right: $container-padding / 2;
   padding-left: $container-padding / 2;
+  padding-right: $container-padding / 2;
 }
 
 .column.unpack {
-  padding-right: unset;
   padding-left: unset;
+  padding-right: unset;
 }
 
 // --------------------------------------------------------- column
