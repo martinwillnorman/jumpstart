@@ -39,8 +39,8 @@ $basic-unit: 8px;
 
 // --------------------------------------------------------- container padding & wi0dth : ($container-padding) also sets column padding and negative row margin
 
-$container-width: calc-multiple-of(1230px);
-$container-padding: calc-multiple-of(15px);
+$container-width: calc-multiple-of(1273px);
+$container-padding: calc-multiple-of(24px);
 
 // --------------------------------------------------------- section margin
 
@@ -131,6 +131,8 @@ $breakpoints: (
     }
     &.max-#{$i} > .column {
       flex-basis: 100% / $i;
+    }
+    &.max-#{$i}.constrict > .column {
       max-width: 100% / $i;
     }
   }
@@ -149,6 +151,11 @@ $breakpoints: (
       .column-fifth {
         flex-grow: 0;
         flex-basis: $i / $no-of-columns * 100%;
+
+        &.unpack {
+          padding-left: unset;
+          padding-right: unset;
+        }
       }
     } @else if floor($i / $no-of-columns * 100) == 33 {
       .column-#{$i},
@@ -161,6 +168,11 @@ $breakpoints: (
       .column-two-fifths {
         flex-grow: 0;
         flex-basis: $i / $no-of-columns * 100%;
+
+        &.unpack {
+          padding-left: unset;
+          padding-right: unset;
+        }
       }
     } @else if $i / $no-of-columns * 100 == 50 {
       .column-#{$i},
@@ -200,8 +212,8 @@ $breakpoints: (
       }
     } @else {
       .column-#{$i} {
-        flex-basis: $i / $no-of-columns * 100%;
         flex-grow: 0;
+        flex-basis: $i / $no-of-columns * 100%;
       }
     }
   }
@@ -212,56 +224,56 @@ $breakpoints: (
     @if $i / $no-of-restrictors * 100 == 25 {
       .restrictor-#{$i},
       .restrictor-fourth {
-        max-width: $i / $no-of-restrictors * 100%;
+        max-width: ($i / $no-of-restrictors * $container-width);
       }
     } @else if $i / $no-of-restrictors * 100 == 20 {
       .restrictor-#{$i},
       .restrictor-fifth {
-        max-width: $i / $no-of-restrictors * 100%;
+        max-width: ($i / $no-of-restrictors * $container-width);
       }
     } @else if floor($i / $no-of-restrictors * 100) == 33 {
       .restrictor-#{$i},
       .restrictor-third {
-        max-width: $i / $no-of-restrictors * 100%;
+        max-width: ($i / $no-of-restrictors * $container-width);
       }
     } @else if $i / $no-of-restrictors * 100 == 40 {
       .restrictor-#{$i},
       .restrictor-two-fifths {
-        max-width: $i / $no-of-restrictors * 100%;
+        max-width: ($i / $no-of-restrictors * $container-width);
       }
     } @else if $i / $no-of-restrictors * 100 == 50 {
       .restrictor-#{$i},
       .restrictor-half {
-        max-width: $i / $no-of-restrictors * 100%;
+        max-width: ($i / $no-of-restrictors * $container-width);
       }
     } @else if $i / $no-of-restrictors * 100 == 60 {
       .restrictor-#{$i},
       .restrictor-three-fifths {
-        max-width: $i / $no-of-restrictors * 100%;
+        max-width: ($i / $no-of-restrictors * $container-width);
       }
     } @else if floor($i / $no-of-restrictors * 100) == 66 {
       .restrictor-#{$i},
       .restrictor-two-thirds {
-        max-width: $i / $no-of-restrictors * 100%;
+        max-width: ($i / $no-of-restrictors * $container-width);
       }
     } @else if $i / $no-of-restrictors * 100 == 75 {
       .restrictor-#{$i},
       .restrictor-three-fourths {
-        max-width: $i / $no-of-restrictors * 100%;
+        max-width: ($i / $no-of-restrictors * $container-width);
       }
     } @else if $i / $no-of-restrictors * 100 == 80 {
       .restrictor-#{$i},
       .restrictor-four-fifths {
-        max-width: $i / $no-of-restrictors * 100%;
+        max-width: ($i / $no-of-restrictors * $container-width);
       }
     } @else if $i / $no-of-restrictors * 100 == 100 {
       .restrictor-#{$i},
       .restrictor-full {
-        max-width: $i / $no-of-restrictors * 100%;
+        max-width: ($i / $no-of-restrictors * $container-width);
       }
     } @else {
       .restrictor-#{$i} {
-        max-width: $i / $no-of-restrictors * 100%;
+        max-width: ($i / $no-of-restrictors * $container-width);
       }
     }
   }
@@ -695,20 +707,29 @@ section {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-}
 
-.container.unpack {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.container.no-max {
-  max-width: unset;
-}
-
-.container.unpack > .row {
-  margin-left: unset;
-  margin-right: unset;
+  &.no-max {
+    max-width: unset;
+  }
+  &.unpack > .row {
+    margin-left: unset;
+    margin-right: unset;
+  }
+  &.free-willy {
+    padding-left: unset;
+    padding-right: unset;
+    & > .row {
+      margin-left: unset;
+      margin-right: unset;
+      & div[class^="column-"],
+      div[class*=" column-"],
+      div[class^="restrictor-"],
+      div[class*=" restrictor-"] {
+        padding-left: unset;
+        padding-right: unset;
+      }
+    }
+  }
 }
 
 // --------------------------------------------------------- row
@@ -718,7 +739,23 @@ section {
   display: flex;
   margin-left: -$container-padding / 2;
   margin-right: -$container-padding / 2;
+  &.unpack {
+    margin-left: unset;
+    margin-right: unset;
+    & div[class^="column-"],
+    div[class*=" column-"],
+    div[class^="restrictor-"],
+    div[class*=" restrictor-"] {
+      padding-left: unset;
+      padding-right: unset;
+    }
+  }
+
   @include create-max($no-of-columns);
+}
+
+.row.max {
+  flex-wrap: wrap;
 }
 
 // --------------------------------------------------------- column
@@ -727,13 +764,15 @@ section {
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
-  padding-left: $container-padding / 2;
-  padding-right: $container-padding / 2;
 }
 
-.column.unpack {
-  padding-left: unset;
-  padding-right: unset;
+.column,
+div[class^="column-"],
+div[class*=" column-"],
+div[class^="restrictor-"],
+div[class*=" restrictor-"] {
+  padding-left: $container-padding / 2;
+  padding-right: $container-padding / 2;
 }
 
 // --------------------------------------------------------- column
@@ -749,4 +788,9 @@ section {
       flex-basis: 100%;
     }
   }
+}
+
+.unpack {
+  padding-left: unset;
+  padding-right: unset;
 }
