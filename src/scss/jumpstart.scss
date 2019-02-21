@@ -17,9 +17,7 @@
     
 */
 
-@import "node_modules/normalize.scss/normalize.scss",
-  "node_modules/sassy-gridlover/sassy-gridlover/config",
-  "node_modules/sassy-gridlover/sassy-gridlover/sassy-gridlover";
+@import "node_modules/normalize.scss/normalize.scss";
 
 @function calc-u($factor) {
   @return $basic-unit * $factor;
@@ -142,7 +140,7 @@ $breakpoints: (
     &.max-#{$i} > .column {
       flex-basis: 100% / $i;
     }
-    &.max-#{$i}.constrict > .column {
+    &.max-#{$i}.strict > .column {
       max-width: 100% / $i;
     }
   }
@@ -341,81 +339,6 @@ $breakpoints: (
         margin-left: $i / $no-of-columns * 100%;
       }
     }
-  }
-}
-
-@mixin create-headers(
-  $font-size-step,
-  $line-height-step,
-  $margin-top-step,
-  $margin-bottom-step,
-  $unit: $sgl-base-unit,
-  $base-value: $font-size-base
-) {
-  @if $line-height-step == 0 {
-    $line-height-step: $font-size-step + 1;
-  }
-
-  $font-size: $font-size-base;
-  $scale: $scale-factor;
-  $computed-font-size: round(
-    $font-size * sgl-exponent($scale, $font-size-step)
-  );
-
-  $line-height: round($font-size * $sgl-base-line-height);
-  $computed-line-height: $line-height * $line-height-step;
-  $margin-top: $line-height * $margin-top-step;
-  $margin-bottom: $line-height * $margin-bottom-step;
-
-  @if $sgl-debug-mode == true {
-    @include sgl-show-margins(
-      $margin-top,
-      $margin-bottom,
-      $computed-font-size,
-      $unit
-    );
-  }
-
-  @if $unit == "px" or $unit == "pxrem" {
-    font-size: $computed-font-size * 1px;
-    line-height: $computed-line-height * 1px;
-    margin-top: $margin-top * 1px;
-    margin-bottom: $margin-bottom * 1px;
-  }
-
-  @if $unit == "rem" or $unit == "pxrem" {
-    font-size: sgl-decimal-ceil(
-      sgl-rem-calc($computed-font-size, $base-value),
-      5
-    );
-    line-height: sgl-decimal-ceil(
-      sgl-rem-calc($computed-line-height, $base-value),
-      5
-    );
-    margin-top: sgl-decimal-ceil(sgl-rem-calc($margin-top, $base-value), 5);
-    margin-bottom: sgl-decimal-ceil(
-      sgl-rem-calc($margin-bottom, $base-value),
-      5
-    );
-  }
-
-  @if $unit == "em" {
-    font-size: sgl-decimal-ceil(
-      sgl-em-calc($computed-font-size, $base-value),
-      5
-    );
-    line-height: sgl-decimal-ceil(
-      sgl-em-calc($computed-line-height, $computed-font-size),
-      5
-    );
-    margin-top: sgl-decimal-ceil(
-      sgl-em-calc($margin-top, $computed-font-size),
-      5
-    );
-    margin-bottom: sgl-decimal-ceil(
-      sgl-em-calc($margin-bottom, $computed-font-size),
-      5
-    );
   }
 }
 
@@ -726,7 +649,7 @@ section {
     margin-left: unset;
     margin-right: unset;
   }
-  &.free-willy {
+  &.freedom {
     padding-left: unset;
     padding-right: unset;
     & > .row {
