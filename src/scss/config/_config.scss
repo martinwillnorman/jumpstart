@@ -4,25 +4,25 @@ $website-color-secondary: #fff;
 
 // --------------------------------------------------------- unit of measurement for spacing (based on 8px grid)
 
-$basic-unit: 3px;
+$basic-unit: 8px;
 
 // --------------------------------------------------------- container padding & wi0dth : ($container-padding) also sets column padding and negative row margin
 
-$container-width: calc-multiple-of(1273px);
-$container-padding: calc-multiple-of(24px);
+$container-width: calc-multiple-of-base(1273px);
+$container-padding: calc-multiple-of-base(24px);
 
 // --------------------------------------------------------- section margin
 
-$margin-base: calc-multiple-of(60px);
+$margin-base: calc-multiple-of-base(60px);
 
 // --------------------------------------------------------- font family
 
 $font-family-base: serif;
 $font-family-header: sans-serif;
 
-// --------------------------------------------------------- font family
+// --------------------------------------------------------- font size
 
-$font-size-base: 18px;
+$font-size-base: 24px;
 
 // --------------------------------------------------------- font color
 
@@ -60,12 +60,12 @@ $no-of-positions: 12;
 // --------------------------------------------------------- breakpoints
 
 $breakpoints: (
-  "phone": calc-multiple-of(450px),
-  "phablet": calc-multiple-of(540px),
-  "tablet-small": calc-multiple-of(640px),
-  "tablet": calc-multiple-of(768px),
-  "tablet-wide": calc-multiple-of(1024px),
-  "desktop": calc-multiple-of(1248px),
-  "desktop-wide": calc-multiple-of(1440px),
-  "container": calc-multiple-of($container-width)
+  "phone": calc-multiple-of-base(450px),
+  "phablet": calc-multiple-of-base(540px),
+  "tablet-small": calc-multiple-of-base(640px),
+  "tablet": calc-multiple-of-base(768px),
+  "tablet-wide": calc-multiple-of-base(1024px),
+  "desktop": calc-multiple-of-base(1248px),
+  "desktop-wide": calc-multiple-of-base(1440px),
+  "container": calc-multiple-of-base($container-width)
 );

@@ -8,10 +8,9 @@ h6 {
   font-family: $font-family-header;
 }
 
-h2 {
+h1 {
   font: {
     size: 3rem;
   }
   letter-spacing: calc(1px - 0.08em);
-  margin-bottom: 8 * $basic-unit;
 }

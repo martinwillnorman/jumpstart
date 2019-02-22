@@ -2,6 +2,6 @@
   @return $basic-unit * $factor;
 }
 
-@function calc-multiple-of($dividend) {
+@function calc-multiple-of-base($dividend) {
   @return $basic-unit * round($dividend / $basic-unit);
 }

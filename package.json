@@ -15,7 +15,6 @@
     "find-unused-sass-variables": "^0.3.2",
     "node-sass": "^4.11.0",
     "normalize.scss": "^0.1.0",
-    "postcss-cli": "^6.1.1",
-    "sassy-gridlover": "^6.0.2"
+    "postcss-cli": "^6.1.1"
   }
 }
