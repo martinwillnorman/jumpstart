@@ -1,0 +1,33 @@
+* {
+  box-sizing: inherit;
+}
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font: {
+    family: $font-family-base;
+    size: $font-size-base;
+  }
+  color: $font-color-base;
+}
+
+section {
+  overflow: hidden;
+}

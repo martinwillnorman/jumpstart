@@ -1,0 +1,71 @@
+// --------------------------------------------------------- website color
+$website-color-base: #000;
+$website-color-secondary: #fff;
+
+// --------------------------------------------------------- unit of measurement for spacing (based on 8px grid)
+
+$basic-unit: 3px;
+
+// --------------------------------------------------------- container padding & wi0dth : ($container-padding) also sets column padding and negative row margin
+
+$container-width: calc-multiple-of(1273px);
+$container-padding: calc-multiple-of(24px);
+
+// --------------------------------------------------------- section margin
+
+$margin-base: calc-multiple-of(60px);
+
+// --------------------------------------------------------- font family
+
+$font-family-base: serif;
+$font-family-header: sans-serif;
+
+// --------------------------------------------------------- font family
+
+$font-size-base: 18px;
+
+// --------------------------------------------------------- font color
+
+$font-color-base: #000;
+$font-color-header: #000;
+$font-color-additional: (
+  "subheader": #eee
+);
+
+// --------------------------------------------------------- link behavior
+
+$link-decoration: none !important;
+$link-hover-decoration: none !important;
+
+// --------------------------------------------------------- link color
+
+$link-color-base: #000;
+$link-color-hover: none;
+
+// --------------------------------------------------------- background color
+
+$background-colors: (
+  "white": #fff,
+  "black": #000,
+  "grey": #eee
+);
+
+// --------------------------------------------------------- no of delineators
+
+$no-of-columns: 12;
+$no-of-restrictors: 12;
+$no-of-max: 12;
+$no-of-positions: 12;
+
+// --------------------------------------------------------- breakpoints
+
+$breakpoints: (
+  "phone": calc-multiple-of(450px),
+  "phablet": calc-multiple-of(540px),
+  "tablet-small": calc-multiple-of(640px),
+  "tablet": calc-multiple-of(768px),
+  "tablet-wide": calc-multiple-of(1024px),
+  "desktop": calc-multiple-of(1248px),
+  "desktop-wide": calc-multiple-of(1440px),
+  "container": calc-multiple-of($container-width)
+);

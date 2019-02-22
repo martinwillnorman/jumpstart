@@ -9,14 +9,13 @@
   "scripts": {
     "compile": "node-sass --output-style expanded -o dist/css src/scss && postcss -u autoprefixer -r dist/css/*"
   },
-  "dependencies": {
-    "sassy-gridlover": "^6.0.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^9.4.7",
     "find-unused-sass-variables": "^0.3.2",
     "node-sass": "^4.11.0",
     "normalize.scss": "^0.1.0",
-    "postcss-cli": "^6.1.1"
+    "postcss-cli": "^6.1.1",
+    "sassy-gridlover": "^6.0.2"
   }
 }

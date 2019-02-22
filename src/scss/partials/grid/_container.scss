@@ -1,0 +1,34 @@
+.container {
+  max-width: $container-width;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  &.no-max {
+    max-width: unset;
+  }
+  &.unpack > .row {
+    margin-left: unset;
+    margin-right: unset;
+  }
+  &.freedom {
+    padding-left: unset;
+    padding-right: unset;
+    & > .row {
+      margin-left: unset;
+      margin-right: unset;
+      & .column,
+      div[class^="column-"],
+      div[class*=" column-"],
+      div[class^="restrictor-"],
+      div[class*=" restrictor-"] {
+        padding-left: unset;
+        padding-right: unset;
+      }
+    }
+  }
+}

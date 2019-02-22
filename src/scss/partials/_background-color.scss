@@ -1,0 +1,5 @@
+@each $background-name, $color-code in $background-colors {
+  .fill-#{$background-name} {
+    background-color: $color-code;
+  }
+}

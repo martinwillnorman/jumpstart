@@ -1,0 +1,16 @@
+.column {
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.column,
+div[class^="column-"],
+div[class*=" column-"],
+div[class^="restrictor-"],
+div[class*=" restrictor-"] {
+  padding-left: $container-padding / 2;
+  padding-right: $container-padding / 2;
+}
+
+@include create-columns($no-of-columns);
