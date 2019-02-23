@@ -1,5 +1,0 @@
-@each $color-name, $color-code in $font-color-additional {
-  .font-#{$color-name} {
-    color: $color-code;
-  }
-}

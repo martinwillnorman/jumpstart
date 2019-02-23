@@ -11,10 +11,6 @@ $basic-unit: 8px;
 $container-width: calc-multiple-of-base(1273px);
 $container-padding: calc-multiple-of-base(24px);
 
-// --------------------------------------------------------- section margin
-
-$margin-base: calc-multiple-of-base(60px);
-
 // --------------------------------------------------------- font family
 
 $font-family-base: serif;
@@ -22,7 +18,7 @@ $font-family-header: sans-serif;
 
 // --------------------------------------------------------- font size
 
-$font-size-base: 24px;
+$font-size-base: 22px;
 
 // --------------------------------------------------------- font color
 
@@ -50,12 +46,13 @@ $background-colors: (
   "grey": #eee
 );
 
-// --------------------------------------------------------- no of delineators
+// --------------------------------------------------------- no of grid classes
 
 $no-of-columns: 12;
 $no-of-restrictors: 12;
 $no-of-max: 12;
 $no-of-positions: 12;
+$no-of-spacers: 30;
 
 // --------------------------------------------------------- breakpoints
 

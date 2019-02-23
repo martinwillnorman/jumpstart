@@ -9,7 +9,13 @@ span,
 li,
 small {
   @include text-crop($top-adjustment: 2px);
-  margin: 0;
+}
+
+p,
+span,
+li,
+small {
+  margin-bottom: 0;
 }
 
 h1,

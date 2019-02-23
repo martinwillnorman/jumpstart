@@ -51,3 +51,15 @@ template,
 [copy-white] {
   color: #fff;
 }
+
+@each $label, $color-code in $background-colors {
+  [fill-#{$label}] {
+    background-color: $color-code;
+  }
+}
+
+@each $label, $color-code in $font-color-additional {
+  [color-#{$label}] {
+    color: $color-code;
+  }
+}

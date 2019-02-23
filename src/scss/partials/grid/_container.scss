@@ -1,4 +1,4 @@
-.container {
+.grid__container {
   max-width: $container-width;
   padding-left: $container-padding;
   padding-right: $container-padding;
@@ -7,28 +7,30 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+}
 
-  &.no-max {
-    max-width: unset;
-  }
-  &.unpack > .row {
+.grid__container--no-max-width {
+  max-width: unset;
+}
+
+.grid_container--unpack > .row {
+  margin-left: unset;
+  margin-right: unset;
+}
+
+.grid_container--unpack-all {
+  padding-left: unset;
+  padding-right: unset;
+  & > .grid__row {
     margin-left: unset;
     margin-right: unset;
-  }
-  &.freedom {
-    padding-left: unset;
-    padding-right: unset;
-    & > .row {
-      margin-left: unset;
-      margin-right: unset;
-      & .column,
-      div[class^="column-"],
-      div[class*=" column-"],
-      div[class^="restrictor-"],
-      div[class*=" restrictor-"] {
-        padding-left: unset;
-        padding-right: unset;
-      }
+    & .grid__column,
+    div[class^="grid__column-"],
+    div[class*=" grid__column-"],
+    div[class^="grid__restrictor-"],
+    div[class*=" grid__restrictor-"] {
+      padding-left: unset;
+      padding-right: unset;
     }
   }
 }

@@ -1,12 +1,12 @@
 @mixin create-max($no-of-max) {
   @for $i from 1 through $no-of-max {
-    &.max-#{$i} {
+    .grid__row--max-#{$i} {
       flex-wrap: wrap;
     }
-    &.max-#{$i} > .column {
+    .grid__row--max-#{$i} > .grid__column {
       flex-basis: 100% / $i;
     }
-    &.max-#{$i}.strict > .column {
+    &.grid__row--max-#{$i}.--strict > .grid__column {
       max-width: 100% / $i;
     }
   }

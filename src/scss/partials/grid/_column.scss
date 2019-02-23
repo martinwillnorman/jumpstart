@@ -1,14 +1,14 @@
-.column {
+.grid__column {
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
 }
 
-.column,
-div[class^="column-"],
-div[class*=" column-"],
-div[class^="restrictor-"],
-div[class*=" restrictor-"] {
+.grid__column,
+div[class^="grid__column-"],
+div[class*=" grid__column-"],
+div[class^="grid__restrictor-"],
+div[class*=" grid__restrictor-"] {
   padding-left: $container-padding / 2;
   padding-right: $container-padding / 2;
 }
