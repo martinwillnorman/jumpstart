@@ -11,14 +11,30 @@
       media="screen"
       href="./dist/css/jumpstart.css"
     />
-    <style></style>
+    <style>
+      .grid__vertical-spacer {
+        margin-bottom: 80px;
+      }
+      .outer {
+        margin: 160px 0;
+        background: blue;
+        display: flex;
+        flex-direction: column;
+      }
+      .inner {
+        margin-bottom: 80px;
+        margin-top: 40px;
+      }
+    </style>
   </head>
   <body>
     <section fill-grey>
       <div class="grid__spacer--20">
         <div class="grid__container">
-          <div class="grid__row grid__row--max-3">
-            <div class="grid__column">
+          <div
+            class="grid__row grid__row--max-4 grid__row--space-20 grid__row--unpack"
+          >
+            <div class="grid__column grid__vertical-spacer">
               <h2>Hello there</h2>
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque
@@ -27,8 +43,8 @@
                 illum eius eligendi neque, iusto ipsam nihil.
               </p>
             </div>
-            <div class="grid__column">
-              <h2>Hello There</h2>
+            <div class="grid__column grid__vertical-spacer">
+              <h2>Hello there</h2>
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque
                 modi quam magnam voluptatibus libero? Assumenda voluptas
@@ -36,8 +52,8 @@
                 illum eius eligendi neque, iusto ipsam nihil.
               </p>
             </div>
-            <div class="grid__column">
-              <h2>Hello There</h2>
+            <div class="grid__column grid__vertical-spacer">
+              <h2>Hello there</h2>
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque
                 modi quam magnam voluptatibus libero? Assumenda voluptas
@@ -45,8 +61,26 @@
                 illum eius eligendi neque, iusto ipsam nihil.
               </p>
             </div>
-            <div class="grid__column">
-              <h2>Hello There</h2>
+            <div class="grid__column grid__vertical-spacer">
+              <h2>Hello there</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque
+                modi quam magnam voluptatibus libero? Assumenda voluptas
+                laudantium blanditiis nobis saepe quibusdam labore temporibus
+                illum eius eligendi neque, iusto ipsam nihil.
+              </p>
+            </div>
+            <div class="grid__column grid__vertical-spacer">
+              <h2>Hello there</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque
+                modi quam magnam voluptatibus libero? Assumenda voluptas
+                laudantium blanditiis nobis saepe quibusdam labore temporibus
+                illum eius eligendi neque, iusto ipsam nihil.
+              </p>
+            </div>
+            <div class="grid__column grid__vertical-spacer">
+              <h2>Hello there</h2>
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque
                 modi quam magnam voluptatibus libero? Assumenda voluptas
@@ -55,6 +89,19 @@
               </p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="outer">
+        <div class="inner">
+          <h5>hello</h5>
+        </div>
+        <div class="inner">
+          <h5>hello</h5>
+        </div>
+        <div class="inner">
+          <h5>hello</h5>
         </div>
       </div>
     </section>

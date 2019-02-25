@@ -24,4 +24,10 @@
   flex-wrap: wrap;
 }
 
+@for $i from 1 through $no-of-spacers {
+  .grid__row--space-#{$i} {
+    margin: $basic-unit * $i 0;
+  }
+}
+
 @include create-max($no-of-columns);

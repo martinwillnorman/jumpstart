@@ -6,7 +6,7 @@
     .grid__row--max-#{$i} > .grid__column {
       flex-basis: 100% / $i;
     }
-    &.grid__row--max-#{$i}.--strict > .grid__column {
+    &.grid__row--max-#{$i}.grid__row--strict > .grid__column {
       max-width: 100% / $i;
     }
   }
