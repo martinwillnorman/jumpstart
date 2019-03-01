@@ -16,41 +16,102 @@
         margin: 0;
         padding: 0;
       }
+
+      .grid__container--3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
+      }
+      .grid__container--4 {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      }
+      .grid__container--5 {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+      }
+      .grid__container--6 {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+      }
       .grid__container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       }
+
+      .grid__container--flex {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .grid__container--gap {
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
+      }
+
+      .grid__item--flex {
+        flex-basis: 33.3333%;
+      }
       .grid__item {
+        /* border: solid 1px pink; */
       }
       .grid__item-1 {
       }
     </style>
   </head>
   <body>
-    <div class="grid__container">
-      <div class="grid__item grid__item-1" style="border: solid 2px pink">
-        <h1>Hellodl afjshdk</h1>
-      </div>
-      <div class="grid__item" style="border: solid 2px pink">
-        <h1>Hello</h1>
-      </div>
-      <div class="grid__item" style="border: solid 2px pink">
-        <h1>Hello</h1>
-      </div>
-      <div class="grid__item" style="border: solid 2px pink">
-        <h1>Hello</h1>
-      </div>
-      <div class="grid__item" style="border: solid 2px pink">
-        <h1>Hello</h1>
-      </div>
-      <div class="grid__item" style="border: solid 2px pink">
-        <h1>Hello</h1>
-      </div>
-      <div class="grid__item" style="border: solid 2px pink">
-        <h1>Hello</h1>
-      </div>
-      <div class="grid__item" style="border: solid 2px pink">
-        <h1>Hello</h1>
+    <div
+      style="padding: 200px 0; max-width: 1230px; margin: 0 auto; border: 2px black solid;"
+    >
+      <div class="row" style="padding: 0 20px;">
+        <div class="grid__container--3 grid__container--gap">
+          <div class="grid__item">
+            <h1>Hello</h1>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem
+              soluta inventore aspernatur cumque ipsam ratione. Necessitatibus
+              fugiat modi, neque harum error ad expedita aliquam accusamus illo
+              molestiae soluta explicabo molestias!
+            </p>
+          </div>
+          <div class="grid__item">
+            <h1>Hello</h1>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem
+              soluta inventore aspernatur cumque ipsam ratione. Necessitatibus
+              fugiat modi, neque harum error ad expedita aliquam accusamus illo
+              molestiae soluta explicabo molestias!
+            </p>
+          </div>
+          <div class="grid__item">
+            <h1>Hello</h1>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem
+              soluta inventore aspernatur cumque ipsam ratione. Necessitatibus
+              fugiat modi, neque harum error ad expedita aliquam accusamus illo
+              molestiae soluta explicabo molestias!
+            </p>
+          </div>
+          <div class="grid__item">
+            <h1>Hello</h1>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem
+              soluta inventore aspernatur cumque ipsam ratione. Necessitatibus
+              fugiat modi, neque harum error ad expedita aliquam accusamus illo
+              molestiae soluta explicabo molestias!
+            </p>
+          </div>
+          <div class="grid__item">
+            <h1>Hello</h1>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem
+              soluta inventore aspernatur cumque ipsam ratione. Necessitatibus
+              fugiat modi, neque harum error ad expedita aliquam accusamus illo
+              molestiae soluta explicabo molestias!
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </body>
